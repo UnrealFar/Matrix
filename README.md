@@ -17,7 +17,7 @@ python3 matrix.py
 # Commands and Usage
 
 ## Create matrix:
-    `CREATE MATRIX`
+    CREATE MATRIX
     *Enter name*: {name_of_matrix}
     *Enter order*: mxn
     *Enter row 1*: [a(1,1) a(1, 2) ... a(1, n)]
@@ -26,22 +26,23 @@ python3 matrix.py
     *Enter row m* 
 
 ## Display matrix:
-    `DISPLAY MATRIX {name_of_matrix}`
+    DISPLAY MATRIX {name_of_matrix}
         
 ## Index matrix:
-    `INDEX MATRIX {name_of_matrix} x(int) y(int)`
+    INDEX MATRIX {name_of_matrix} x(int) y(int)
 
 ## Evaluate matrix expressions:
-    `EVAL {expression}`
+    EVAL {expression}
 
 ## Add matrices:
-    `EVAL C=A+B+..`
+    EVAL C=A+B+..
 
 ## Subtract matrices:
-    `EVAL C=A-B-..`
+    EVAL C=A-B-..
 
 ## Multiply matrices:
-    `EVAL C=AxBx..`
+    EVAL C=AxBx..
+
 
 > [!NOTE]
 > You can contribute to this repository by [creating a pull request](https://github.com/UnrealFar/Matrix/pulls)
