@@ -35,7 +35,17 @@ class Matrix:
         rows = [[self.rows[r][c] + other.rows[r][c] for c in range(self.order[1])] for r in range(self.order[0])]
         return Matrix(name, self.order, rows)
 
+    def subtract(self, name: str, other: Matrix) -> Matrix:
+        if self.order != other.order:
+            raise OrderError("Order of both matrices should be same!")
+        rows = [[self.rows[r][c] - other.rows[r][c] for c in range(self.order[1])] for r in range(self.order[0])]
+        return Matrix(name, self.order, rows)
 
+    def multiply(self, name: str, other: Matrix) -> Matrix:
+        if self.order[1] != other.order[0]:
+            raise OrderError("Number of columns in first matrix should be same as number of rows in second matrix")
+        rows = [[sum(self.rows[i][k] * other.rows[k][j] for k in range(self.order[1])) for j in range(other.order[1])] for i in range(self.order[0])]
+        return Matrix(name, (self.order[0], other.order[1]), rows)
 
 def info():
     print("""
@@ -114,6 +124,16 @@ while True:
                 i+=1
                 nm = Matrix.MATRICES[ms[i]]
                 matrix = matrix.add(new, nm)
+                Matrix.MATRICES[new] = matrix
+            if m == "-":
+                i+=1
+                nm = Matrix.MATRICES[ms[i]]
+                matrix = matrix.subtract(new, nm)
+                Matrix.MATRICES[new] = matrix
+            if m == "x":
+                i+=1
+                nm = Matrix.MATRICES[ms[i]]
+                matrix = matrix.multiply(new, nm)
                 Matrix.MATRICES[new] = matrix
             i+=1
         print(matrix)
