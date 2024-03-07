@@ -97,6 +97,10 @@ def create_matrix():
     Matrix.MATRICES[name] = matrix
     return matrix
 
+def get_matrix(name: str) -> Optional[Matrix]:
+    return Matrix.MATRICES.get(name) if name in Matrix.MATRICES else print("Matrix with that name was not found")
+
+
 while True:
     inp = input("What do you want to do? ").strip()
     if inp.upper() == "INFO":
@@ -131,22 +135,36 @@ while True:
         while i<len(ms):
             m = ms[i]
             if m not in "+-x/":
-                matrix = Matrix.MATRICES[m]
+                matrix = get_matrix(ms[i])
+
             if m == "+":
                 i+=1
-                nm = Matrix.MATRICES[ms[i]]
+                nm = get_matrix(ms[i])
+                if not nm:
+                    print("Matrix with that name was not found")
+                    break
                 matrix = matrix.add(new, nm)
-                Matrix.MATRICES[new] = matrix
+
             if m == "-":
                 i+=1
-                nm = Matrix.MATRICES[ms[i]]
+                nm = get_matrix(ms[i])
+                if not nm:
+                    print("Matrix with that name was not found")
+                    break
                 matrix = matrix.subtract(new, nm)
-                Matrix.MATRICES[new] = matrix
+
             if m == "x":
                 i+=1
-                nm = Matrix.MATRICES[ms[i]]
-                matrix = matrix.multiply(new, nm)
-                Matrix.MATRICES[new] = matrix
+                if ms[i].isdigit():
+                    matrix = matrix.multiply(new, int(ms[i]))
+                else:
+                    nm = get_matrix(ms[i])
+                    if not nm:
+                        print("Matrix with that name was not found")
+                        break
+                    matrix = matrix.multiply(new, nm)
+
+            Matrix.MATRICES
             i+=1
         print(matrix)
         continue
