@@ -49,24 +49,31 @@ python3 matrix.py
 
 # Logic
 - What is a matrix?
+
 > Matrices are an ordered rectangular array of numbers(real or complex) or functions arranged into rows and columns.
-Example: ```
+Example:
+
+```
 A = ┏1 2 3┓
     ┃4 5 6┃
     ┗7 8 9┛
 ```
+
 > The horizontal lines are called rows and the vertical lines are called columns.
 > Matrices are always represented usign capital letter.
 > Matrices are represented by square or simple brackets.
 > A matrix of order `mxn` is represented as `A = [aᵢⱼ]ₘₓₙ`.
 
+
 - What is the order of matrix?
 > It gives use the number of rows and columns of a matrix.
 > For a matrix of `m` rows and `n` columns, its order is `mxn` and is read as `m by n`
 
+
 - What is the logic for matrix addition?
 > For two matrices `A = [aᵢⱼ]ₘₓₙ` and `B = [bᵢⱼ]ₘₓₙ`, `A + B = [aᵢⱼ + bᵢⱼ]ₘₓₙ`
 > Order of both matrices should be the same
+
 
 - What is the logic for matrix subtraction?
 > For two matrices `A = [aᵢⱼ]ₘₓₙ` and `B = [bᵢⱼ]ₘₓₙ`, `A - B = [aᵢⱼ - bᵢⱼ]ₘₓₙ`
@@ -81,17 +88,21 @@ A = ┏1 2 3┓
 > The transpose of a matrix can be obtaiend by interchainging rows and columns of a matrix.
 > For a matrix `A = [aᵢⱼ]ₘₓₙ`, its transpose is `A' = [aⱼᵢ]ₙₓₘ`.
 > For example,
+
 ```
 A =  ┏1 2 3┓
      ┃4 5 6┃
      ┗7 8 9┛
 ```
+
 then,
+
 ```
 A' = ┏1 4 7┓
      ┃2 5 8┃
      ┗3 6 9┛
 ```
+
 
 > [!NOTE]
 > You can contribute to this repository by [creating a pull request](https://github.com/UnrealFar/Matrix/pulls)
