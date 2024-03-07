@@ -9,6 +9,7 @@ class Matrix:
     MATRICES: Dict[str, Matrix] = {}
 
     def __init__(self, name: str, order: Tuple[int], rows: List[List[int]]) -> None:
+        self.name: str = name
         self.order: Tuple[int] = order
         self.rows: List[List[int]] = rows
         self.columns: List[List[int]] = [[r[i] for r in self.rows] for i in range(self.order[1])]
@@ -47,6 +48,9 @@ class Matrix:
         rows = [[sum(self.rows[i][k] * other.rows[k][j] for k in range(self.order[1])) for j in range(other.order[1])] for i in range(self.order[0])]
         return Matrix(name, (self.order[0], other.order[1]), rows)
 
+    def transpose(self, name) -> Matrix:
+        return Matrix(name, self.order[::-1], self.columns)
+
 def info():
     print("""
     Create matrix:     CREATE MATRIX
@@ -66,6 +70,8 @@ def info():
     Subtract matrices: C=A-B-..
 
     Multiply matrices: C=AxBx..
+          
+    Transpose matrix:  TRANSPOSE {new_name}={old_name}
     """
     )
 
@@ -137,4 +143,24 @@ while True:
                 Matrix.MATRICES[new] = matrix
             i+=1
         print(matrix)
-        
+        continue
+
+    if inp.upper().startswith("TRANSPOSE"):
+        e = inp.split(" ")[-1].split("=")
+        new, old = e
+        matrix = Matrix.MATRICES.get(old)
+        if not matrix:
+            print("Matrix with that name was not found")
+            continue
+        new = matrix.transpose(new)
+        Matrix.MATRICES[new.name] = matrix
+        print(new)
+
+    if inp.upper() == "SHOW MATRICES":
+        for k, v in Matrix.MATRICES.items():
+            print(k, "=", v)
+        continue
+
+    if inp.upper() == "EXIT":
+        print("Goodbye!")
+        break

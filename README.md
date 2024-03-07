@@ -43,6 +43,23 @@ python3 matrix.py
 ## Multiply matrices:
     EVAL C=AxBx..
 
+## Transpose of matrix:
+    TRANSPOSE MATRIX B=A
+> here, B becomes the transpose matrix of A
+
+# Logic
+- What is the logic for matrix addition?
+> For two matrices `A = [aᵢⱼ]ₘₓₙ` and `B = [bᵢⱼ]ₘₓₙ`, `A + B = [aᵢⱼ + bᵢⱼ]ₘₓₙ`
+> Order of both matrices should be the same
+
+- What is the logic for matrix subtraction?
+> For two matrices `A = [aᵢⱼ]ₘₓₙ` and `B = [bᵢⱼ]ₘₓₙ`, `A - B = [aᵢⱼ - bᵢⱼ]ₘₓₙ`
+> Order of both matrices should be the same
+
+- What is the logic for matrix multiplication?
+> For two matrices `A = [aᵢⱼ]ₘₓₙ` and `B = [bⱼₖ]ₙₓₚ`, `A x B = C`
+> Here, `C = [cᵢₖ]ₘₓₚ` where `cᵢₖ ` is sum of product of iᵗʰ row of A and kᵗʰ column of B
+> Number of columns of A should be the same as number of rows of B [n = n]
 
 > [!NOTE]
 > You can contribute to this repository by [creating a pull request](https://github.com/UnrealFar/Matrix/pulls)
