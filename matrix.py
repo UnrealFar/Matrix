@@ -134,7 +134,7 @@ while True:
         i = 0
         while i<len(ms):
             m = ms[i]
-            if m not in "+-x/":
+            if m not in "+-x/" and not m.isdigit():
                 matrix = get_matrix(ms[i])
 
             if m == "+":
@@ -155,14 +155,16 @@ while True:
 
             if m == "x":
                 i+=1
-                if ms[i].isdigit():
+                if ms[i-2].isdigit():
+                    matrix = get_matrix(ms[i]).multiply(new, int(ms[i-2]))
+                elif ms[i].isdigit():
                     matrix = matrix.multiply(new, int(ms[i]))
                 else:
                     nm = get_matrix(ms[i])
                     if not nm:
                         print("Matrix with that name was not found")
                         break
-                    matrix = matrix.multiply(new, nm)
+                    matrix = get_matrix(ms[i-2]).multiply(new, nm)
 
             Matrix.MATRICES
             i+=1
