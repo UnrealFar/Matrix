@@ -61,5 +61,17 @@ python3 matrix.py
 > Here, `C = [cᵢₖ]ₘₓₚ` where `cᵢₖ ` is sum of product of iᵗʰ row of A and kᵗʰ column of B
 > Number of columns of A should be the same as number of rows of B [n = n]
 
+- What is the transpose of a matrix?
+> The transpose of a matrix can be obtaiend by interchainging rows and columns of a matrix.
+> For a matrix `A = [aᵢⱼ]ₘₓₙ`, its transpose is `A' = [aⱼᵢ]ₙₓₘ`
+> For example,
+    A = ┏1 2 3┓
+        ┃4 5 6┃
+        ┗7 8 9┛
+then,
+    A' = ┏1 4 7┓
+         ┃2 5 8┃
+         ┗3 6 9┛
+
 > [!NOTE]
 > You can contribute to this repository by [creating a pull request](https://github.com/UnrealFar/Matrix/pulls)
