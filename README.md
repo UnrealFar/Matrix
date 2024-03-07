@@ -63,7 +63,7 @@ python3 matrix.py
 
 - What is the transpose of a matrix?
 > The transpose of a matrix can be obtaiend by interchainging rows and columns of a matrix.
-> For a matrix `A = [aᵢⱼ]ₘₓₙ`, its transpose is `A' = [aⱼᵢ]ₙₓₘ`
+> For a matrix `A = [aᵢⱼ]ₘₓₙ`, its transpose is `A' = [aⱼᵢ]ₙₓₘ`.
 > For example,
 ```
 A =  ┏1 2 3┓
@@ -75,6 +75,7 @@ then,
 A' = ┏1 4 7┓
      ┃2 5 8┃
      ┗3 6 9┛
+```
 
 > [!NOTE]
 > You can contribute to this repository by [creating a pull request](https://github.com/UnrealFar/Matrix/pulls)
