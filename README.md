@@ -50,8 +50,7 @@ python3 matrix.py
 # Logic
 - What is a matrix?
 
-> Matrices are an ordered rectangular array of numbers(real or complex) or functions arranged into rows and columns.
-Example:
+> Matrices are an ordered rectangular array of numbers(real or complex) or functions arranged into rows and columns. Example:
 
 ```
 A = ┏1 2 3┓
